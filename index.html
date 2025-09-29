@@ -8,16 +8,27 @@
   <body>
     <header>
 
-      <nav id="navegacion">
-         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#sobre-mi">Sobre mi</a></li>
-            <li><a href="#certificaciones">Certificaciones</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
+      <nav class="nav">
+         <div class="nav-container">
+            <a class="logo">AB</a>
 
+            <!-- Botón hamburguesa -->
+            <div class="hamburger" id="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+
+            <div class="nav-menu" id="nav-menu">
+              <a href="#inicio" class="nav-link">Inicio</a>
+              <a href="#sobre-mi" class="nav-link">Sobre mi</a>
+              <a href="#certificaciones" class="nav-link">Certificaciones</a>
+              <a href="#habilidades" class="nav-link">Habilidades</a>
+              <a href="#proyectos" class="nav-link">Proyectos</a>
+              <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+
+          </div>
       </nav>
 
       
@@ -25,7 +36,7 @@
     </header>
 
     <main>
-      <section class="inicio">
+      <section id="inicio" class="inicio">
 
          <div class="hero">
                 <div class="hero-content">
@@ -35,6 +46,34 @@
                 </div>
             </div>
 
+      </section>
+
+      <section id="sobre-mi" class="sobre-mi">
+          <div class="sobre-mi-container">
+              <div class="sobre-mi-content">
+                  <h2 class="sobre-mi-title">Sobre mí</h2>
+                  <div class="sobre-mi-text">
+                      <p>Soy estudiante de la carrera de <strong>Licenciatura en Sistemas</strong>, apasionado por el <strong>Desarrollo Full Stack (Especialmente el Back-End) con React, Java Spring Boot y SQL</strong>. Soy una persona <strong>proactiva, adaptable y responsable </strong> en cada paso que doy.</p>
+                      
+                      <p>Mediante mi formación académica y práctica, adquirí habilidades con <strong>lenguajes y tecnologías</strong> con <strong>proyectos reales</strong>. Lo cual me ha permitido desarrollar mi trabajo colaboritivo de manera eficaz.</p>
+                      
+                      <p>Mi objetivo es crecer profesionalmente aportando  <strong>soluciones innovadoras</strong> a un equipo, ofreciendo mi <strong>compromiso, creatividad y habilidades clave</strong>.</p>
+                  </div>
+              </div>
+              
+              <div class="sobre-mi-visual">
+                  <div class="profile-image">
+                      <img src="/imgs/profile-photo.jpg" alt="Foto del developer Alejo Gaston Brites" />
+                  </div>
+                  <button class="cv-download-btn">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path d="M12 16l-4-4h3V4h2v8h3l-4 4z" fill="currentColor"/>
+                          <path d="M20 18H4v-2h16v2z" fill="currentColor"/>
+                      </svg>
+                      Descargar CV
+                  </button>
+              </div>
+          </div>
       </section>
 
 
