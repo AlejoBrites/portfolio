@@ -1,13 +1,15 @@
 *{
     scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
 }
 
 body{
     background: #1c1c1d;
     background-image: #4c4c4e;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
@@ -30,20 +32,25 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    gap: 400px;
+    gap: 50px; 
 }
 
 .logo {
-    font-size: 2.3rem;
+    font-size: 2.1rem; 
     font-weight: bold;
     color:rgba(1,190,237,1);
     text-decoration: none;
-    margin-right: 80px;
+    margin-right: 20px;
     flex-shrink: 0;
 }
 
 .nav-menu {
-    font-size: 1.2rem;
+    font-size: 1.1rem; 
+    display: flex;
+    list-style: none;
+    gap: 15px; 
+    flex-wrap: nowrap; 
+    white-space: nowrap; 
 }
 
 /* ---------- BOTÓN HAMBURGUESA (MÓVIL) ---------- */
@@ -76,13 +83,6 @@ header {
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
 
 .nav-link {
     color: #ffffff;
@@ -101,7 +101,6 @@ header {
     display: flex;
     align-items: center; 
     justify-content: center;
-    padding-top: 80px; /* Espacio para el header fijo */ 
     text-align: center;
     color: white;
 }
@@ -113,8 +112,7 @@ header {
 }
 
 .hero-content h1 {
-    font-size: 4em;
-    margin: 0;
+    font-size: 4.9em;
 }
 
 .hero-content h2 {
@@ -128,8 +126,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: #4c4c4e;
-    padding: 80px 20px;
+   
 }
 
 .sobre-mi-container {
@@ -139,6 +136,7 @@ header {
     grid-template-columns: 1fr 400px;
     gap: 80px;
     align-items: center;
+    padding: 0 40px;
 }
 
 .sobre-mi-content {
@@ -158,15 +156,15 @@ header {
     position: absolute;
     bottom: -10px;
     left: 0;
-    width: 60px;
+    width: 100px;
     height: 4px;
     background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
     border-radius: 2px;
 }
 
 .sobre-mi-text {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1.5rem;
+    line-height: 1,4;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -189,10 +187,10 @@ header {
 .profile-image {
     width: 280px;
     height: 280px;
-    border-radius: 20px; /* Bordes redondeados cuadrados */
+    border-radius: 20px; 
     overflow: hidden;
-    border: 3px solid rgba(1, 190, 237, 0.3); /* Usando tu color azul del logo */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra muy pequeña */
+    border: 3px solid rgba(1, 190, 237, 0.3); 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     position: relative;
 }
 
@@ -232,56 +230,389 @@ header {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
-/* ---------- RESPONSIVE (TABLET / CELULAR) ---------- */
-@media (max-width: 768px) {
+/* ---------- SECCIÓN CERTIFICACIONES ---------- */
+.certificaciones {  
+    min-height: 100vh;
+    background: #1c1c1d; 
+    color: white;
+    position: relative;
+    padding: 1px;
+}
+
+.certificaciones-title {
+    text-align: center;
+    font-size: 3rem;
+    margin: 10rem; 
+    font-weight: 700;
+    color: white;
+    position: relative;
+}
+
+.certificaciones-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 2px;
+}
+
+.certificaciones-carousel {
+    position: relative;
+    max-width: 1400px; 
+    margin: 0 auto;
+    padding: 0 100px; 
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.certificados-container {
+    flex: 1;
+    overflow-x: hidden; 
+    overflow-y: visible; 
+    position: relative;
+}
+
+.certificados-wrapper {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.certificado-card { 
+    width: 320px;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.certificado-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 20px 20px 0 0;
+}
+
+.certificado-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(78, 205, 196, 0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(78, 205, 196, 0.1);
+}
+
+.certificado-imagen {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.certificado-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    border-radius: 0;
+}
+
+.certificado-card:hover .certificado-imagen img {
+    transform: scale(1.08);
+}
+
+.certificado-info {
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.certificado-info h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+    line-height: 1.3;
+}
+
+.certificado-institucion {
+    color: #4ecdc4;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.certificado-descripcion {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.ver-certificado-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ver-certificado-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.ver-certificado-btn:hover::before {
+    left: 100%;
+}
+
+.ver-certificado-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.certificado-nav {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #4ecdc4;
+    position: relative;
+    overflow: hidden;
+}
+
+.certificado-nav::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.certificado-nav:hover::before {
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+}
+
+.certificado-nav:hover {
+    background: rgba(78, 205, 196, 0.1);
+    border-color: rgba(78, 205, 196, 0.3);
+    transform: scale(1.1);
+    color: white;
+}
+
+.certificado-nav:active {
+    transform: scale(0.95);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 50px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: transparent;
+    border-color: rgba(78, 205, 196, 0.5);
+    transform: scale(1.4);
+}
+
+.indicator.active::before {
+    width: 8px;
+    height: 8px;
+}
+
+
+/* ---------- RESPONSIVE (LAPTOP / TABLET / CELULAR) ---------- */
+
+/* ========== LAPTOPS (1200px) ========== */
+@media (max-width: 1200px) {
+    /* Header siempre visible y fijo */
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: rgba(20, 19, 19, 0.95);
+        backdrop-filter: blur(10px);
+    }
+
+    /* Navigation */
+    .logo {
+        font-size: 1.9rem;
+        margin-right: 15px;
+    }
+    
+    .nav-menu {
+        font-size: 1rem;
+        gap: 12px;
+    }
+    
+    .nav-container {
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    /* Hero Section */
     .hero-content h1 {
-        font-size: 2.5em;
+        font-size: 4.2em;
     }
 
     .hero-content h2 {
-        font-size: 1.5em;
-        margin: 8px 0;
+        font-size: 1.8em;
     }
-
-    /* Sobre mí responsive */
+    
+    /* Sobre mí en laptops */
     .sobre-mi-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-        padding: 0 10px;
+        gap: 60px;
+        padding: 0 30px;
     }
-
-    .sobre-mi-title {
-        font-size: 2.5rem;
-    }
-
+    
     .sobre-mi-text {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     .profile-image {
-        width: 220px;
-        height: 220px;
-        border-radius: 18px; /* Proporcionalmente más pequeño */
+        width: 260px;
+        height: 260px;
+    }
+    
+    /* Certificaciones en laptops - 2 tarjetas */
+    .certificaciones-carousel {
+        max-width: 1000px;
+        padding: 0 60px;
+    }
+    
+    .certificado-card {
+        width: 300px;
+    }
+    
+    .certificados-wrapper {
+        gap: 25px;
+    }
+    
+    .certificado-imagen {
+        height: 200px;
+    }
+    
+    .certificado-info {
+        padding: 20px;
+    }
+    
+    .certificado-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .certificado-descripcion {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== TABLETS (768px) ========== */
+@media (max-width: 768px) {
+    /* Header siempre visible y fijo */
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: rgba(20, 19, 19, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.5rem 1rem;
     }
 
-    /* Mostrar hamburguesa */
+    /* Navigation - Menu Hamburguesa */
     .hamburger {
         display: flex;
     }
 
-    /* Ocultar menú en móviles hasta que se active */
     .nav-menu {
         position: fixed;
-        left: -100%; /* Se esconde fuera del viewport */
-        top: 60px; /* Justo debajo del header fijo */
+        left: -100%;
+        top: 60px;
         flex-direction: column;
-        background-color: #4ecdc4;;
+        background-color: rgba(78, 205, 196, 0.95);
+        backdrop-filter: blur(15px);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
+        transition: 0.3s ease;
         border-radius: 0 0 15px 15px;
-        z-index: 999; /* Por debajo del header pero encima del contenido */
+        z-index: 999;
         padding: 20px 0;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
@@ -294,42 +625,310 @@ header {
         padding: 15px 0;
         display: block;
         font-size: 1.1rem;
+        color: #ffffff;
     }
     
     .nav-container {
-        flex-direction: row;
         gap: 15px;
-        padding: 0 10px;
+        padding: 0 15px;
     }
 
     .logo {
         margin-right: 0;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
-    header {
-        padding: 0.5rem 1rem;
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 3.5em;
+        margin-top: 80px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.6em;
+        margin: 12px 0;
+    }
+
+    /* Sobre mí Section */
+    .sobre-mi-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+        padding: 0 25px;
+    }
+
+    .sobre-mi-title {
+        font-size: 2.5rem;
+    }
+
+    .sobre-mi-text {
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+    .profile-image {
+        width: 240px;
+        height: 240px;
+        border-radius: 18px;
+        margin: 0 auto;
+    }
+
+    .cv-download-btn {
+        padding: 14px 28px;
+        font-size: 0.95rem;
+    }
+
+    /* Certificaciones Section - 2 tarjetas */
+    .certificaciones {
+        padding: 80px 0;
+    }
+
+    .certificaciones-title {
+        font-size: 2.5rem;
+        margin: 60px 0 40px 0;
+    }
+
+    .certificaciones-carousel {
+        max-width: 100%;
+        padding: 0 40px;
+        gap: 20px;
+    }
+
+    .certificados-wrapper {
+        gap: 20px;
+    }
+
+    .certificado-card {
+        width: 280px;
+    }
+
+    .certificado-imagen {
+        height: 180px;
+    }
+
+    .certificado-info {
+        padding: 18px;
+    }
+
+    .certificado-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .certificado-descripcion {
+        font-size: 0.85rem;
+    }
+
+    .certificado-nav {
+        width: 50px;
+        height: 50px;
+    }
+
+    .carousel-indicators {
+        margin-top: 40px;
+        gap: 10px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
     }
 }
 
-/* Pantallas muy pequeñas como 320px */
-@media (max-width: 400px) {
- 
-    .logo {
-        font-size: 1.3rem;
-    }
-    
+/* ========== MÓVILES (480px) ========== */
+@media (max-width: 480px) {
+    /* Header siempre visible y fijo */
     header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: rgba(20, 19, 19, 0.95);
+        backdrop-filter: blur(10px);
         padding: 0.4rem 0.8rem;
     }
-    
-    .hero-content h1 {
-        font-size: 2.2em;
+
+    /* Navigation - Menu Hamburguesa */
+    .hamburger {
+        display: flex;
     }
 
-    /* Sobre mí en pantallas muy pequeñas */
-    .sobre-mi {
-        padding: 40px 10px;
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 55px;
+        flex-direction: column;
+        background-color: rgba(78, 205, 196, 0.95);
+        backdrop-filter: blur(15px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+        border-radius: 0 0 15px 15px;
+        z-index: 999;
+        padding: 15px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        padding: 12px 0;
+        display: block;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-container {
+        padding: 0 12px;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.8em;
+        margin-top: 70px;
+        line-height: 1.1;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4em;
+    }
+
+    /* Sobre mí Section */
+    .sobre-mi-container {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .sobre-mi-title {
+        font-size: 2.2rem;
+    }
+
+    .sobre-mi-text {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 16px;
+        margin: 0 auto;
+    }
+
+    .cv-download-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+
+    /* Certificaciones Section - 1 sola tarjeta */
+    .certificaciones {
+        position: relative;
+    }
+
+    .certificaciones-title {
+        font-size: 2.2rem;
+        margin: 50px 0 30px 0;
+    }
+
+    .certificaciones-carousel {
+        padding: 0 25px;
+        gap: 15px;
+    }
+
+    .certificado-card {
+        width: calc(100vw - 80px);
+        max-width: 220px;
+    }
+
+    .certificado-imagen {
+        height: 160px;
+    }
+
+    .certificado-info {
+        padding: 16px;
+    }
+
+    .certificado-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .certificado-descripcion {
+        font-size: 0.85rem;
+        line-height: 1.4;
+    }
+
+    .ver-certificado-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .certificado-nav {
+        width: 45px;
+        height: 45px;
+    }
+
+    .carousel-indicators {
+        margin-top: 35px;
+        gap: 8px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* ========== MÓVILES PEQUEÑOS (375px) ========== */
+@media (max-width: 375px) {
+    /* Header siempre visible y fijo */
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: rgba(20, 19, 19, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.4rem 0.8rem;
+    }
+
+    /* Navigation */
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .nav-container {
+        padding: 0 10px;
+    }
+
+    .nav-menu {
+        top: 52px;
+        padding: 12px 0;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+        font-size: 0.95rem;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 2.4em;
+        margin-top: 65px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.3em;
+    }
+
+    /* Sobre mí Section */
+    .sobre-mi-container {
+        padding: 0 15px;
+        gap: 35px;
     }
 
     .sobre-mi-title {
@@ -343,11 +942,219 @@ header {
     .profile-image {
         width: 180px;
         height: 180px;
-        border-radius: 15px; /* Proporcionalmente más pequeño */
+        border-radius: 15px;
     }
 
     .cv-download-btn {
-        padding: 12px 24px;
+        padding: 11px 22px;
+        font-size: 0.85rem;
+    }
+
+    /* Certificaciones Section - 1 sola tarjeta */
+    .certificaciones {
+        position: relative;
+    }
+
+    .certificaciones-title {
+        font-size: 2rem;
+    }
+
+    .certificaciones-carousel {
+        padding: 0 20px;
+        gap: 12px;
+    }
+
+    .certificado-card {
+        width: calc(80vw - 70px);
+        max-width: 220px;
+        border-radius: 15px;
+    }
+
+    .certificado-imagen {
+        height: 140px;
+    }
+
+    .certificado-info {
+        padding: 14px;
+    }
+
+    .certificado-info h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .certificado-institucion {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .certificado-descripcion {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 16px;
+    }
+
+    .ver-certificado-btn {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    .certificado-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-indicators {
+        margin-top: 30px;
+        gap: 6px;
+    }
+
+    .indicator {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* ========== MÓVILES MUY PEQUEÑOS (320px) ========== */
+@media (max-width: 320px) {
+    /* Header siempre visible y fijo */
+    header {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background: rgba(20, 19, 19, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 0.3rem 0.6rem;
+    }
+
+    /* Navigation */
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .nav-container {
+        padding: 0 8px;
+    }
+
+    .nav-menu {
+        top: 50px;
+        padding: 10px 0;
+    }
+
+    .nav-link {
+        padding: 8px 0;
         font-size: 0.9rem;
+    }
+
+    /* Hero Section */
+    .inicio {
+        min-height: 100vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2em;
+        margin-top: 60px;
+        line-height: 1.1;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2em;
+    }
+
+    /* Sobre mí Section */
+    .sobre-mi {
+        padding: 40px 0;
+    }
+
+    .sobre-mi-container {
+        padding: 0 12px;
+        gap: 30px;
+    }
+
+    .sobre-mi-title {
+        font-size: 1.8rem;
+    }
+
+    .sobre-mi-text {
+        font-size: 0.9rem;
+    }
+
+    .profile-image {
+        width: 160px;
+        height: 160px;
+        border-radius: 12px;
+    }
+
+    .cv-download-btn {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    /* Certificaciones Section - 1 sola tarjeta */
+    .certificaciones {
+        position: relative;
+    }
+
+    .certificaciones-title {
+        font-size: 1.7rem;
+    }
+
+    .certificaciones-title::after {
+        width: 60px;
+        height: 2px;
+    }
+
+
+
+    .certificado-card {
+        width: calc(80vw - 50px);
+        max-width: 180px;
+        border-radius: 12px;
+    }
+
+    .certificado-imagen {
+        height: 120px;
+    }
+
+    .certificado-info {
+        padding: 12px;
+    }
+
+    .certificado-info h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    .certificado-institucion {
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+    }
+
+    .certificado-descripcion {
+        font-size: 0.75rem;
+        line-height: 1.2;
+        margin-bottom: 14px;
+    }
+
+    .ver-certificado-btn {
+        padding: 9px 16px;
+        font-size: 0.8rem;
+        border-radius: 8px;
+    }
+
+    .certificado-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-indicators {
+        margin-top: 25px;
+        gap: 5px;
+    }
+
+    .indicator {
+        width: 6px;
+        height: 6px;
     }
 }
