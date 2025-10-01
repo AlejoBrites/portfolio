@@ -6,6 +6,3 @@
 npm create vite@latest ./ -- --template vanilla
 ```
 
-## Detengo el servidor de desarrollo
-
-Ctrl + C | q + enter
