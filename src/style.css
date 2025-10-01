@@ -710,6 +710,283 @@ header {
 }
 
 
+/* ---------- SECCIÓN PROYECTOS ---------- */
+.proyectos {
+    min-height: 100vh;
+    background: #1c1c1d;
+    color: white;
+    padding: 80px 0;
+    position: relative;
+}
+
+.proyectos-title {
+    text-align: center;
+    font-size: 3rem;
+    margin: 80px 0 60px 0;
+    font-weight: 700;
+    color: white;
+    position: relative;
+}
+
+.proyectos-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 2px;
+}
+
+.proyectos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 450px;
+}
+
+.proyecto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 25px 25px 0 0;
+}
+
+.proyecto-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(78, 205, 196, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(78, 205, 196, 0.1);
+}
+
+.proyecto-imagen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 25px 0 0 25px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+}
+
+.proyecto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.proyecto-card:hover .proyecto-imagen img {
+    transform: scale(1.1);
+}
+
+.proyecto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.8), rgba(78, 205, 196, 0.8));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.proyecto-card:hover .proyecto-overlay {
+    opacity: 1;
+}
+
+.proyecto-overlay-content {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.proyecto-nombre {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.proyecto-descripcion-overlay {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.proyecto-info {
+    padding: 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.proyecto-titulo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #4ecdc4;
+    position: relative;
+}
+
+.proyecto-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    border-radius: 2px;
+}
+
+.proyecto-descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.proyecto-tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.backend-tech {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15), rgba(255, 107, 107, 0.05));
+    border-color: rgba(255, 107, 107, 0.3);
+    color: #ffb3b3;
+}
+
+.frontend-tech {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(78, 205, 196, 0.05));
+    border-color: rgba(78, 205, 196, 0.3);
+    color: #a8f0e8;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.backend-tech:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.25), rgba(255, 107, 107, 0.1));
+    border-color: rgba(255, 107, 107, 0.6);
+}
+
+.frontend-tech:hover {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.25), rgba(78, 205, 196, 0.1));
+    border-color: rgba(78, 205, 196, 0.6);
+}
+
+.proyecto-acciones {
+    display: flex;
+    gap: 15px;
+}
+
+.ver-repositorio-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.ver-repositorio-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.ver-repositorio-btn:hover::before {
+    left: 100%;
+}
+
+.ver-repositorio-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.btn-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.ver-repositorio-btn:hover .btn-icon {
+    transform: rotate(360deg);
+}
+
+/* Animación de entrada */
+.proyecto-card {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: projectFadeIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes projectFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* ---------- RESPONSIVE (LAPTOP / TABLET / CELULAR) ---------- */
 
 /* ========== LAPTOPS (1200px) ========== */
@@ -818,6 +1095,45 @@ header {
     .skill-pill::before {
         font-size: 1rem;
     }
+
+    
+    /* Proyectos en laptops */
+    .proyectos-container {
+        padding: 0 30px;
+    }
+
+    .proyectos-title {
+        font-size: 2.5rem;
+        margin: 60px 0 50px 0;
+    }
+
+    .proyecto-card {
+        max-width: 700px;
+        min-height: 400px;
+    }
+
+    .proyecto-info {
+        padding: 30px 25px;
+    }
+
+    .proyecto-titulo {
+        font-size: 1.8rem;
+    }
+
+    .proyecto-descripcion {
+        font-size: 0.95rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .ver-repositorio-btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
 }
 
 /* ========== TABLETS (768px) ========== */
@@ -1002,6 +1318,54 @@ header {
     .skill-pill::before {
         font-size: 1rem;
     }
+
+    /* Proyectos en tablets */
+    .proyectos {
+        padding: 60px 0;
+    }
+
+    .proyectos-container {
+        padding: 0 25px;
+    }
+
+    .proyectos-title {
+        font-size: 2.2rem;
+        margin: 50px 0 40px 0;
+    }
+
+    .proyecto-card {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        min-height: auto;
+    }
+
+    .proyecto-imagen {
+        border-radius: 25px 25px 0 0;
+        min-height: 250px;
+    }
+
+    .proyecto-info {
+        padding: 25px;
+    }
+
+    .proyecto-titulo {
+        font-size: 1.6rem;
+    }
+
+    .proyecto-descripcion {
+        font-size: 0.9rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+
+    .ver-repositorio-btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+
 }
 
 /* ========== MÓVILES (480px) ========== */
@@ -1186,6 +1550,65 @@ header {
     .skill-pill::before {
         font-size: 0.9rem;
     }
+
+    /* Proyectos en móviles */
+    .proyectos {
+        padding: 50px 0;
+    }
+
+    .proyectos-container {
+        padding: 0 20px;
+    }
+
+    .proyectos-title {
+        font-size: 2rem;
+        margin: 40px 0 30px 0;
+    }
+
+    .proyecto-card {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        border-radius: 20px;
+    }
+
+    .proyecto-imagen {
+        border-radius: 20px 20px 0 0;
+        min-height: 220px;
+    }
+
+    .proyecto-info {
+        padding: 20px;
+    }
+
+    .proyecto-titulo {
+        font-size: 1.4rem;
+    }
+
+    .proyecto-descripcion {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .proyecto-tecnologias {
+        gap: 6px;
+        margin-bottom: 25px;
+    }
+
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    .ver-repositorio-btn {
+        padding: 10px 18px;
+        font-size: 0.8rem;
+        gap: 8px;
+    }
+
+    .btn-icon {
+        font-size: 1rem;
+    }
+
 }
 
 /* ========== MÓVILES PEQUEÑOS (375px) ========== */
@@ -1351,6 +1774,64 @@ header {
     .skill-pill::before {
         font-size: 0.85rem;
     }
+
+    /* Proyectos en móviles pequeños */
+    .proyectos {
+        padding: 45px 0;
+    }
+
+    .proyectos-container {
+        padding: 0 15px;
+    }
+
+    .proyectos-title {
+        font-size: 1.8rem;
+        margin: 35px 0 25px 0;
+    }
+
+    .proyecto-card {
+        border-radius: 18px;
+    }
+
+    .proyecto-imagen {
+        border-radius: 18px 18px 0 0;
+        min-height: 200px;
+    }
+
+    .proyecto-info {
+        padding: 18px;
+    }
+
+    .proyecto-titulo {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .proyecto-descripcion {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .proyecto-tecnologias {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .tech-tag {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+    }
+
+    .ver-repositorio-btn {
+        padding: 9px 16px;
+        font-size: 0.75rem;
+        gap: 6px;
+    }
+
+    .btn-icon {
+        font-size: 0.9rem;
+    }
+
 }
 
 /* ========== MÓVILES MUY PEQUEÑOS (320px) ========== */
