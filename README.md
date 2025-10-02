@@ -1,4 +1,3 @@
-# Clase 02 - Maquetador Web Avanzado
 
 ## Incializar un proyecto de Vite de manera rápida
 
