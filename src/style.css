@@ -8,7 +8,6 @@
 
 body{
     background: #1c1c1d;
-    background-image: #4c4c4e;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
@@ -103,6 +102,7 @@ header {
     justify-content: center;
     text-align: center;
     color: white;
+    
 }
 
 .hero-content {
@@ -118,6 +118,10 @@ header {
 .hero-content h2 {
     font-size: 2em;
     margin: 8px;
+}
+
+.hero-content strong {
+    color: #4ecdc4;
 }
 
 /* Sobre mi */
