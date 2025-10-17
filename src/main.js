@@ -2,6 +2,7 @@ import './style.css'
 
 // Funciones para el menú hamburguesa
 function alternarMenu(hamburguesa, menuNav) {
+    hamburguesa.classList.toggle('active');
     menuNav.classList.toggle('active');
 }
 
@@ -30,11 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (hamburguesa && menuNav) {
         // Alternar menú al hacer click en hamburguesa
         hamburguesa.addEventListener('click', () => alternarMenu(hamburguesa, menuNav));
-        
+
         // Cerrar menú al hacer click en un enlace
         document.querySelectorAll('.nav-link').forEach(enlace => {
             enlace.addEventListener('click', () => cerrarMenu(hamburguesa, menuNav));
         });
+
+        
         
         // Cerrar menú al hacer click fuera de él
         document.addEventListener('click', (e) => manejarClickAfuera(e, hamburguesa, menuNav));
